@@ -17,8 +17,8 @@ class App < Sinatra::Base
     phrase = params[:phrase]
     num.times do
       "#{phrase}"
-    end    
-    
+    end
+
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5'
@@ -30,8 +30,19 @@ class App < Sinatra::Base
     "#{word1} #{word2} #{word3} #{word4} #{word5}"
   end
 
-  get '/'
-    = params[]
-    "#{}"
+  get '/:operation/:number1/:number2'
+    op = params[:operation]
+    num1 = params[:number1]
+    num2 = params[:number2]
+    case op
+    when 'add'
+      "#{num1 + num2}"
+    when 'divide'
+      "#{num1 / num2}"
+    when 'subtract'
+      "#{num1 - num2}"
+    when 'multiply'
+      "#{num1 * num2}"
+    end
   end
 end
