@@ -2,17 +2,17 @@ require_relative 'config/environment'
 
 class App < Sinatra::Base
   # Write your code here!
-  get '/reversename/:name'
+  get '/reversename/:name' do
     name = params[:name]
     "#{name.reverse}"
   end
 
-  get '/square/:number'
+  get '/square/:number' do
     num = params[:number]
     "#{num^2}"
   end
 
-  get '/say/:number/:phrase'
+  get '/say/:number/:phrase' do
     num = params[:number]
     phrase = params[:phrase]
     num.times do
@@ -21,7 +21,7 @@ class App < Sinatra::Base
 
   end
 
-  get '/say/:word1/:word2/:word3/:word4/:word5'
+  get '/say/:word1/:word2/:word3/:word4/:word5' do
     word1 = params[:word1]
     word2 = params[:word2]
     word3 = params[:word3]
@@ -30,7 +30,7 @@ class App < Sinatra::Base
     "#{word1} #{word2} #{word3} #{word4} #{word5}"
   end
 
-  get '/:operation/:number1/:number2'
+  get '/:operation/:number1/:number2' do
     op = params[:operation]
     num1 = params[:number1]
     num2 = params[:number2]
